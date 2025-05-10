@@ -1,0 +1,34 @@
+{
+  "name": "basic-demo",
+  "version": "1.0.0",
+  "description": "Shows how to form self-contained components with their own state and user interaction.",
+  "keywords": [
+    "interaction",
+    "pointer-events"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@react-three/drei": "9.117.1",
+    "@react-three/fiber": "8.17.10",
+    "@types/three": "0.170.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-scripts": "5.0.1",
+    "three": "0.170.0",
+    "@react-three/postprocessing": "2.16.3",
+    "leva": "0.9.32"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
