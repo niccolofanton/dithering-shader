@@ -17,7 +17,7 @@ A dithering shader implementation with React Three Fiber. This project demonstra
 Start the application in development mode:
 
 ```bash
-npm start
+yarn start
 ```
 
 ## How the Shader Works
