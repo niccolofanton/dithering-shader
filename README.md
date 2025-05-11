@@ -2,8 +2,6 @@
 
 A dithering shader implementation with React Three Fiber. This project demonstrates how to apply dithering and post-processing effects to 3D scenes with Three.js.
 
-![Project screenshot](thumbnail.png)
-
 ## Features
 
 - Custom dithering effect with 4x4 pixel pattern
@@ -14,48 +12,13 @@ A dithering shader implementation with React Three Fiber. This project demonstra
 - 3D model with custom environment map lighting
 - Responsive design
 
-## Technologies
-
-- React
-- TypeScript
-- Three.js
-- React Three Fiber
-- @react-three/drei
-- @react-three/postprocessing
-- Leva (for UI controls)
-
-## Installation
-
-Clone the repository and install dependencies:
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/dithering-shader.git
-cd dithering-shader
-
-# Install dependencies with Bun
-bun install
-```
-
 ## Running
 
 Start the application in development mode:
 
 ```bash
-bun start
+npm start
 ```
-
-The application will be available at [http://localhost:3000](http://localhost:3000).
-
-## Production Build
-
-Create an optimized production build:
-
-```bash
-bun run build
-```
-
-Build files will be available in the `build/` folder.
 
 ## How the Shader Works
 
@@ -82,7 +45,3 @@ The interface allows adjusting various parameters:
 - 3D Model: [Jousting Helmet](https://sketchfab.com/3d-models/jousting-helmet-a4eea31d9d9441af9434a7da5ae46b54) by The Royal Armoury, CC-BY-4.0 license
 - Original Dithering Pattern: [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
 - Environment lighting: Inspired by [@0xca0a](https://x.com/0xca0a/status/1857444050707640651)
-
-## License
-
-This project is distributed under the MIT License. See the LICENSE file for more details.
