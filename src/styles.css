@@ -56,6 +56,15 @@ body {
   letter-spacing: 1.2px;
 }
 
+.demo-author a {
+  color: white;
+  /* text-decoration: none; */
+}
+
+.github-link {
+  text-decoration: underline;
+}
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   .demo-name {

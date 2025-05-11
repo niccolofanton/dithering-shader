@@ -10,7 +10,13 @@ import './styles.css';
 const DemoName: FC = () => (
   <div className="demo-container">
     <div className="demo-name">Dithering Shader</div>
-    <a href="https://niccolofanton.dev" target="_blank" rel="noopener noreferrer" className="demo-author">made by <span className="underlined">niccolofanton</span></a>
+    <div className="demo-author">
+      made by <span className="underlined">
+        <a href="https://niccolofanton.dev" target="_blank" rel="noopener noreferrer">niccolofanton</a>
+      </span>
+      {" • "}
+      <a href="https://github.com/niccolofanton/dithering-shader" target="_blank" rel="noopener noreferrer" className="github-link">GitHub</a>
+    </div>
   </div>
 );
 
