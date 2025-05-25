@@ -1,10 +1,16 @@
 {
   "name": "dithering-shader",
   "version": "1.0.0",
-  "description": "Demo of a dithering shader implementation with React Three Fiber.",
+  "description": "A dithering shader implementation with React Three Fiber demonstrating halftoning techniques and post-processing effects in WebGL.",
   "keywords": [
-    "interaction",
-    "pointer-events"
+    "dithering",
+    "shader",
+    "three.js",
+    "react",
+    "webgl",
+    "post-processing",
+    "halftoning",
+    "codrops"
   ],
   "main": "src/index.tsx",
   "dependencies": {
@@ -25,7 +31,7 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "start": "craco start",
+    "dev": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"

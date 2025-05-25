@@ -7,6 +7,24 @@ import * as THREE from 'three';
 import { useControls, folder, Leva } from 'leva';
 import './styles.css';
 
+{/* <header class="frame">
+<h1 class="frame__title">Dithering Shader</h1>
+<a class="frame__back" href="https://tympanus.net/codrops/?p=">Article</a>
+<a class="frame__archive" href="https://tympanus.net/codrops/demos/">All demos</a>
+<a class="frame__github" href="https://github.com/codrops/">GitHub</a>
+<nav class="frame__tags">
+  <a href="https://tympanus.net/codrops/demos/?tag=shader">#shader</a>
+  <a href="https://tympanus.net/codrops/demos/?tag=three-js">#three.js</a>
+  <a href="https://tympanus.net/codrops/demos/?tag=webgl">#webgl</a>
+  <a href="https://tympanus.net/codrops/demos/?tag=post-processing">#post-processing</a>
+</nav>
+<nav class="frame__demos">
+  <span>Basic Dithering</span>
+  <a href="index2.html">With Bloom</a>
+  <a href="index3.html">Animated</a>
+</nav>
+</header> */}
+
 const DemoName: FC = () => (
   <div className="demo-container">
     <div className="demo-name">Dithering Shader</div>
@@ -14,8 +32,24 @@ const DemoName: FC = () => (
       made by <span className="underlined">
         <a href="https://niccolofanton.dev" target="_blank" rel="noopener noreferrer">niccolofanton</a>
       </span>
+
+      {" • "}
+      <a href="#" target="_blank" rel="noopener noreferrer" className="github-link">Article</a>
+
+      {" • "}
+      <a href="#" target="_blank" rel="noopener noreferrer" className="github-link">All demos</a>
+
       {" • "}
       <a href="https://github.com/niccolofanton/dithering-shader" target="_blank" rel="noopener noreferrer" className="github-link">GitHub</a>
+
+    </div>
+
+    <div className="demo-author" style={{ display: 'flex', gap: '10px', marginTop: '1px' }}>
+      <a href="https://tympanus.net/codrops/demos/?tag=shader">#shader</a>
+      <a href="https://tympanus.net/codrops/demos/?tag=three-js">#three.js</a>
+      <a href="https://tympanus.net/codrops/demos/?tag=webgl">#webgl</a>
+      <a href="https://tympanus.net/codrops/demos/?tag=post-processing">#post-processing</a>
+
     </div>
   </div>
 );
@@ -55,6 +89,15 @@ export default function App(): JSX.Element {
     })
   });
 
+  // Remove loading class when app is ready
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document.body.classList.remove('loading');
+    }, 1000); // Small delay to show the loading animation
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Update renderer clear color when background color changes
   useEffect(() => {
     if (rendererRef.current) {
@@ -72,7 +115,7 @@ export default function App(): JSX.Element {
   useEffect(() => {
     // Initial check
     handleResize();
-    
+
     // Add listener
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -81,11 +124,11 @@ export default function App(): JSX.Element {
   return (
     <>
       <Leva collapsed hidden={false} />
-      <Canvas 
-        shadows 
+      <Canvas
+        shadows
         camera={{ position: [0, -1, 4], fov: 65 }}
-        gl={{ 
-          alpha: false 
+        gl={{
+          alpha: false
         }}
         onCreated={({ gl }) => {
           rendererRef.current = gl;
@@ -93,8 +136,8 @@ export default function App(): JSX.Element {
         }}
       >
         <group position={[0, -0.5, 0]}>
-          <Float 
-            floatIntensity={2} 
+          <Float
+            floatIntensity={2}
             rotationIntensity={1}
             speed={2}
           >

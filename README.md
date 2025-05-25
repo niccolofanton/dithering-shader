@@ -1,6 +1,12 @@
 # Dithering Shader
 
-A dithering shader implementation with React Three Fiber. This project demonstrates how to apply dithering and post-processing effects to 3D scenes with Three.js.
+*A dithering shader implementation with React Three Fiber demonstrating halftoning techniques and post-processing effects in WebGL.*
+
+![Dithering Shader Demo](./preview.png)
+
+[Article on Codrops](https://tympanus.net/codrops/?p=)
+
+[Demo](https://tympanus.net/Development/DitheringShader/)
 
 ## Features
 
@@ -12,12 +18,17 @@ A dithering shader implementation with React Three Fiber. This project demonstra
 - 3D model with custom environment map lighting
 - Responsive design
 
-## Running
-
-Start the application in development mode:
+## Installation
 
 ```bash
-yarn start
+# Install dependencies
+yarn
+
+# Start development server
+yarn dev
+
+# Build for production
+yarn build
 ```
 
 ## How the Shader Works
@@ -45,3 +56,10 @@ The interface allows adjusting various parameters:
 - 3D Model: [Jousting Helmet](https://sketchfab.com/3d-models/jousting-helmet-a4eea31d9d9441af9434a7da5ae46b54) by The Royal Armoury, CC-BY-4.0 license
 - Original Dithering Pattern: [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
 - Environment lighting: Inspired by [@0xca0a](https://x.com/0xca0a/status/1857444050707640651)
+
+## Misc
+
+Follow Codrops: [Bluesky](https://bsky.app/profile/codrops.bsky.social), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/), [X](http://www.x.com/codrops)
+
+## License
+[MIT](LICENSE)
