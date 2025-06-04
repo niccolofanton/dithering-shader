@@ -4,7 +4,7 @@
 
 ![Dithering Shader Demo](./preview.png)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=)
+[Article on Codrops](https://tympanus.net/codrops/2025/06/04/building-a-real-time-dithering-shader/)
 
 [Demo](https://tympanus.net/Development/DitheringShader/)
 
