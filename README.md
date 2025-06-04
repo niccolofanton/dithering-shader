@@ -54,7 +54,7 @@ The interface allows adjusting various parameters:
 ## Credits
 
 - 3D Model: [Jousting Helmet](https://sketchfab.com/3d-models/jousting-helmet-a4eea31d9d9441af9434a7da5ae46b54) by The Royal Armoury, CC-BY-4.0 license
-- Original Dithering Pattern: [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
+- Original Dithering Pattern by [Klems](https://www.shadertoy.com/user/Klems): [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
 - Environment lighting: Inspired by [@0xca0a](https://x.com/0xca0a/status/1857444050707640651)
 
 ## Misc
