@@ -1,47 +1,81 @@
+<div align="center">
+
 # Dithering Shader
 
-A dithering shader implementation with React Three Fiber. This project demonstrates how to apply dithering and post-processing effects to 3D scenes with Three.js.
+### Real-time ordered dithering as a post-processing effect for 3D scenes, built with React Three Fiber
 
-## Features
+[![Live demo](https://img.shields.io/badge/Live-demo-000000?style=flat-square)](https://dithering.niccolofanton.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/niccolofanton/dithering-shader?style=flat-square)](https://github.com/niccolofanton/dithering-shader/stargazers)
 
-- Custom dithering effect with 4x4 pixel pattern
-- Dynamic adjustment of grid size and pixel ratio
-- Pre and post dithering bloom effects
-- Configurable grayscale mode
-- Interactive controls for all shader parameters
-- 3D model with custom environment map lighting
-- Responsive design
+**[Open the live demo →](https://dithering.niccolofanton.dev)**
 
-## Running
+</div>
 
-Start the application in development mode:
+## What it does
+
+This project applies a classic **ordered (Bayer) dithering** effect to a rendered Three.js scene
+as a full-screen post-processing pass. The scene renders a 3D model with custom environment-map
+lighting, and a GLSL shader pixelates the frame and quantizes brightness through a 4x4 dither
+matrix to produce the retro halftone look. Key parameters are exposed through an on-screen
+[Leva](https://github.com/pmndrs/leva) control panel so you can tweak the effect in real time.
+
+## Quick start
+
+Requires Node.js and [Yarn](https://yarnpkg.com/) (a `yarn.lock` is committed).
 
 ```bash
+git clone https://github.com/niccolofanton/dithering-shader.git
+cd dithering-shader
+yarn install
 yarn start
 ```
 
-## How the Shader Works
+Then open the local dev server printed in your terminal. To create a production build:
 
-The dithering shader implements a halftoning technique based on a 4x4 pattern matrix.
-The process works as follows:
+```bash
+yarn build
+```
 
-1. The image is first pixelated based on grid size and pixel size ratio
-2. Luminance is calculated for each pixel
-3. Based on pixel position and luminance, a dithering pattern is applied
-4. The effect can be applied in grayscale or color mode
+## How the shader works
 
-## Controls
+The dithering pass (`src/dithering-shader/`) runs after the scene is rendered:
 
-The interface allows adjusting various parameters:
+1. The frame is **pixelated** according to the grid size and pixel-size ratio.
+2. **Luminance** is computed per pixel.
+3. The pixel position is mapped into a **4x4 Bayer threshold matrix**; the brightness is compared
+   against the matrix value to decide whether the pixel is drawn or knocked out.
+4. The result can be rendered in **grayscale or color**.
 
-- **Dithering Effect Resolution**: Adjusts the dithering grid size
-- **Pixelation Strength**: Intensifies the pixelation effect
-- **Grayscale Only**: Toggles black and white mode
-- **Bloom (Pre/Post Dithering)**: Add bloom effects before or after dithering
-- **Environment Settings**: Adjust lighting intensity and highlight color
+Bloom can be added **before** (pre-dithering) and/or **after** (post-dithering) the dither pass,
+chaining `postprocessing` effect passes through an `EffectComposer`.
+
+## Features
+
+- Custom ordered-dithering effect using a 4x4 Bayer matrix
+- Adjustable dithering grid resolution and pixelation strength
+- Grayscale-only or color mode toggle
+- Independent pre- and post-dithering bloom passes
+- Live tweaking of grid resolution, pixelation strength, grayscale mode, and the bloom passes via Leva controls
+- 3D model lit with a custom environment map
+- Responsive, full-window canvas
+
+## Tech stack
+
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Three.js](https://threejs.org/) via [React Three Fiber](https://github.com/pmndrs/react-three-fiber) and [drei](https://github.com/pmndrs/drei)
+- [postprocessing](https://github.com/pmndrs/postprocessing) for the effect composer
+- [Leva](https://github.com/pmndrs/leva) for the controls panel
+- Create React App (configured with [craco](https://github.com/dilanx/craco))
 
 ## Credits
 
-- 3D Model: [Jousting Helmet](https://sketchfab.com/3d-models/jousting-helmet-a4eea31d9d9441af9434a7da5ae46b54) by The Royal Armoury, CC-BY-4.0 license
-- Original Dithering Pattern by [Klems](https://www.shadertoy.com/user/Klems): [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
-- Environment lighting: Inspired by [@0xca0a](https://x.com/0xca0a/status/1857444050707640651)
+- 3D Model: [Jousting Helmet](https://sketchfab.com/3d-models/jousting-helmet-a4eea31d9d9441af9434a7da5ae46b54) by The Royal Armoury, CC-BY-4.0
+- Original dithering pattern by [Klems](https://www.shadertoy.com/user/Klems) on [Shadertoy](https://www.shadertoy.com/view/ltSSzW)
+- Environment lighting inspired by [@0xca0a](https://x.com/0xca0a/status/1857444050707640651)
+
+## License
+
+Released under the [MIT License](LICENSE).
+</content>
+</invoke>
