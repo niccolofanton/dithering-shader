@@ -2,6 +2,8 @@
 
 # Dithering Shader
 
+![Dithering Shader](docs/preview.gif)
+
 ### Real-time ordered dithering as a post-processing effect for 3D scenes, built with React Three Fiber
 
 [![Live demo](https://img.shields.io/badge/Live-demo-000000?style=flat-square)](https://dithering.niccolofanton.dev)
