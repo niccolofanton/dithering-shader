@@ -4,23 +4,67 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="theme-color" content="#000000">
-	<!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	<meta name="theme-color" content="#ffffff">
+	<title>Dithering Shader — real-time Bayer dithering</title>
+	<meta name="description"
+		content="Real-time ordered (Bayer) dithering as a post-processing pass over a 3D scene: a threshold matrix quantises every pixel, built with React Three Fiber." />
+	<meta name="keywords" content="dithering, bayer matrix, ordered dithering, shader, three.js, react three fiber, webgl, post-processing" />
+	<meta name="author" content="Niccolò Fanton" />
+	<link rel="author" href="https://niccolofanton.dev">
+	<link rel="canonical" href="https://dithering.niccolofanton.dev/">
 	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-	<!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-	<title>Dithering Shader Demo</title>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Niccolò Fanton">
+	<meta property="og:url" content="https://dithering.niccolofanton.dev/">
+	<meta property="og:title" content="Dithering Shader — real-time Bayer dithering">
+	<meta property="og:description"
+		content="Real-time ordered (Bayer) dithering as a post-processing pass over a 3D scene: a threshold matrix quantises every pixel, built with React Three Fiber.">
+	<meta property="og:image" content="https://dithering.niccolofanton.dev/og.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="A jousting helmet rendered in black-and-white ordered dithering on white">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Dithering Shader — real-time Bayer dithering">
+	<meta name="twitter:description"
+		content="Real-time ordered (Bayer) dithering as a post-processing pass over a 3D scene: a threshold matrix quantises every pixel, built with React Three Fiber.">
+	<meta name="twitter:image" content="https://dithering.niccolofanton.dev/og.png">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "Dithering Shader",
+		"description": "Real-time ordered (Bayer) dithering as a post-processing pass over a 3D scene: a threshold matrix quantises every pixel, built with React Three Fiber.",
+		"url": "https://dithering.niccolofanton.dev/",
+		"image": "https://dithering.niccolofanton.dev/og.png",
+		"applicationCategory": "MultimediaApplication",
+		"operatingSystem": "Any browser with WebGL 2",
+		"codeRepository": "https://github.com/niccolofanton/dithering-shader",
+		"author": {
+			"@type": "Person",
+			"name": "Niccolò Fanton",
+			"url": "https://niccolofanton.dev",
+			"sameAs": ["https://github.com/niccolofanton"]
+		}
+	}
+	</script>
+
+	<style>
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			white-space: nowrap;
+			border: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -28,16 +72,23 @@
 		You need to enable JavaScript to run this app.
 	</noscript>
 	<div id="root"></div>
-	<!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+	<section class="sr-only">
+		<h1>Dithering Shader — real-time Bayer dithering</h1>
+		<p>
+			A floating jousting helmet, lit by an environment map and pushed through an ordered dithering
+			post-processing pass: the shader compares each pixel's luminance against a Bayer threshold
+			matrix tiled in screen space, so continuous shading collapses into a two-tone pattern of dots
+			without any temporal noise. Drag to orbit; the panel exposes the background colour, the
+			environment intensity and the dither settings. Built with React Three Fiber, Three.js and the
+			<code>postprocessing</code> library — source in
+			<a href="https://github.com/niccolofanton/dithering-shader">the dithering-shader repository on GitHub</a>.
+		</p>
+		<p>
+			Made by <a href="https://niccolofanton.dev">Niccolò Fanton</a>.
+			Browse <a href="https://demos.niccolofanton.dev">all WebGL demos on the demo hub</a>.
+		</p>
+	</section>
 </body>
 
 </html>
