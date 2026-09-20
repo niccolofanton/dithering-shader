@@ -1,4 +1,5 @@
 {
+  "packageManager": "pnpm@12.5.1",
   "name": "dithering-shader",
   "version": "1.0.0",
   "description": "A dithering shader implementation with React Three Fiber demonstrating halftoning techniques and post-processing effects in WebGL.",
